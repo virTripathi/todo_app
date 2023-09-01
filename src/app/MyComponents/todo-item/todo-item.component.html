@@ -1,0 +1,14 @@
+
+<table class="table table-striped"  >
+  <tr *ngFor="let todo of todos; index as i">
+    <td [ngClass]="{'strike': !todo.active}">{{todo.title}}</td>
+    <td [ngClass]="{'strike': !todo.active}">{{todo.desc}}</td>
+    <td>
+      <input class="form-check-input" type="checkbox" value="" id="todo{{todo.sno}}" (click)="onCheckBoxClick(todo)">
+      <label class="form-check-label" for="todo{{todo.sno}}">
+      <small>Done </small>
+      </label>
+    </td>
+    <td><button class="btn btn-danger text-secondary" (click)="onDeleteButtonClick(todo)">Delete</button></td>
+  </tr>
+</table>

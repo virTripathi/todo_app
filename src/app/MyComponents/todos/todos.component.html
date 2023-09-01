@@ -1,0 +1,26 @@
+<app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
+<div class="container">
+  <h4>Total Todos: {{noOfTodos}} </h4>
+  <div *ngIf="this.todos.length === 0; else elseBlock">No Todos To Display</div>
+
+  <ng-template #elseBlock>
+    <app-search (searchKeywordEvt)="afterKeyword($event)" placeholder="Global Search"></app-search>
+    <app-todo-item class="p-0"[todos]="mainTodos" (todoDelete)="deleteTodo($event)">
+    </app-todo-item>
+
+    <div class="table table-bordered">
+      <table class="table table-striped">
+        <tr *ngIf="mainTodos !== [];">
+          <td> <app-search (searchKeywordEvt)="searchFromTitle($event)" placeholder="Title Search"></app-search></td>
+          <td>
+            <app-search (searchKeywordEvt)="searchFromDesc($event)" placeholder="Description Search"></app-search>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+  </ng-template>
+
+</div>
