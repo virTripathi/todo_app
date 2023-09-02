@@ -1,27 +1,48 @@
-# TodoList
+Angular Two-Way Data Binding Demo
+This repository contains an Angular application that demonstrates the concept of two-way data binding in Angular. The application consists of five components: About, Search, Todos, TodoItem, and AddTodo. This README will guide you through the process of pulling the repository, installing dependencies, and understanding how two-way data binding is implemented in each component.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+Getting Started
+Follow these steps to get the Angular Two-Way Data Binding Demo up and running on your local machine.
 
-## Development server
+Prerequisites
+Make sure you have the following tools installed:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Node.js (with npm)
+Angular CLI (npm install -g @angular/cli)
+Clone the Repository : 'git clone https://github.com/yourusername/angular-two-way-data-binding-demo.git'
+cd angular-two-way-data-binding-demo
+Install Dependencies
+Run the following command to install the project dependencies: 'npm install'
 
-## Code scaffolding
+Run the Application
+Start the Angular development server with the following command: 'ng serve'
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Open your web browser and navigate to http://localhost:4200/. You should see the application running.
 
-## Build
+Application Structure
+The application is structured with five components:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+About: The About component is a simple static page describing the application.
 
-## Running unit tests
+Search: The Search component demonstrates two-way data binding using an input field and a corresponding display of the search term.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Todos: The Todos component displays a list of todos and demonstrates two-way data binding for marking todos as completed.
 
-## Running end-to-end tests
+TodoItem: The TodoItem component represents an individual todo item and allows you to mark it as completed.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+AddTodo: The AddTodo component provides a form to add new todo items to the list.
 
-## Further help
+Two-Way Data Binding Implementation
+Here's a brief explanation of how two-way data binding is implemented in each component:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Search Component
+In the search.component.html file, we use the [(ngModel)] directive to bind the input field's value to the searchTerm property in the component class. This enables two-way data binding, allowing changes in the input field to automatically update the searchTerm property.
+
+Todos and TodoItem Components
+In the todo.component.html file, the list of todos is generated using an *ngFor loop. Each todo item's checkbox uses [(ngModel)] to bind to the completed property of the corresponding todo. This enables two-way data binding, allowing you to toggle the completion status.
+
+AddTodo Component
+In the add-todo.component.html file, the form input fields for the new todo item are bound to the newTodo object using [(ngModel)]. This allows you to enter values into the form fields and submit them, adding a new todo item to the list.
+
+Conclusion
+This Angular application demonstrates the power of two-way data binding, making it easy to keep the UI and underlying data synchronized. Feel free to explore the code and experiment with the components to gain a better understanding of how two-way data binding works in Angular. Enjoy coding!
